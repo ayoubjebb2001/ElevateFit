@@ -160,10 +160,7 @@
     background:var(--orange);
     color:white;
   }
-  
-  
-  
-  
+
   /*---- media queary min--0px & max--599px ----*/
   
   @media (min-width: 0px) and (max-width:599px) {
