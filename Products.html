@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elevateFit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!---- icon cdn link---->
+
+
+</head>
+
+<body>
+    <!--making header-->
+    <header>
+
+        <nav id="nav">
+
+            <img src="images/logo-white.png" class="logo">
+
+            <ul class="menu-bar-side">
+                <li><a href="index.html" style=" all: unset;">Home</a></li>
+                <li><a href="Products.html" style=" all: unset;">Shope</a></li>
+                <li><a href="#" style=" all: unset;">about</a></li>
+                <li><a href="#" style=" all: unset;">contact us</a></li>
+            </ul>
+
+            <ul class="menu-bar">
+
+                <li>&#36;0.00</li>
+                <li><i class='fas fa-shopping-cart'></i></li>
+
+            </ul>
+
+            <i class="fa fa-bars"></i>
+        </nav>
+
+    </header>
+
+
+    <!--Featured Products-->
+
+
+    <div class="small container">
+
+
+        <div class="row row-2">
+            <h2>All Products
+
+            </h2>
+            <select id="categoryFilter">
+                <option value="All">All</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Shirts">Shirts</option>
+                <option value="Trousers">Trousers</option>
+                <option value="Watches">Watches</option>
+                <option value="Socks">Socks</option>
+            </select>
+            <label for="priceRange">Max Price: </label>
+            <input type="range" id="priceRange" min="10" max="100" step="5" value="100">
+            <span id="priceRangeValue">$100</span>
+        </div>
+
+    <div class="page-btn">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>&#8594;</span>
+
+    </div>
+    </div>
+
+    <!-------footer------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and Ios mobile phone.</p>
+
+
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+
+                </div>
+
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png">
+                    <p>Our purpose is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
+                    </p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+
+                </div>
+            </div>
+            <!--add horizontal line and copyright text along with clickable link-->
+            <hr>
+            <a href="" class="copyright">Copyright 2024 - Made with ❤️ LorenzCipher</a>
+        </div>
+    </div>
+
+    <!-----------------JS----------------------->
+    <script>
+        let products = {
+            data: [
+                {
+                    id: 1,
+                    name: "Red Printed T-Shirt",
+                    category: "Shirts",
+                    price: 20,
+                    description: "Men Maroon Printed Round Neck Optical T-shirt",
+                    image: "product-1"
+                },
+
+                {
+                    id: 2,
+                    name: "Black Sports Shoes",
+                    category: "Shoes",
+                    price: 40,
+                    description: "HRX by Hrithik Roshan Running Shoes For Men",
+                    image: "product-2"
+                },
+                {
+                    id: 3,
+                    name: "Grey Trouser",
+                    category: "Trousers",
+                    price: 25,
+                    description: "United Colors of Benetton Men's Sweatpants ",
+                    image: "product-3"
+                },
+                {
+                    id: 4,
+                    name: "Navy Blue Polo Shirt",
+                    category: "Shirts",
+                    price: 25,
+                    description: "Men Solid Polo Neck Cotton Blend Blue T-Shirt",
+                    image: "product-4"
+                },
+                {
+                    id: 5,
+                    name: "Grey Sports Shoes",
+                    category: "Shoes",
+                    price: 40,
+                    description: "HRX by Hrithik Roshan Sneakers For Men",
+                    image: "product-5"
+                },
+                {
+                    id: 6,
+                    name: "Black Sports T-shirt",
+                    category: "Shirts",
+                    price: 40,
+                    description: "PUMA Above The Bar Camo Tee Men Printed Round Neck Cotton Blend T-Shirt",
+                    image: "product-6"
+                },
+                {
+                    id: 7,
+                    name: "Sports Socks",
+                    category: "Socks",
+                    price: 10,
+                    description: "HRX Men Ankle Length Socks",
+                    image: "product-7"
+                },
+                {
+                    id: 8,
+                    name: "Black Wrist Watch",
+                    category: "Watches",
+                    price: 80,
+                    description: "Fossil The Minimalist FS5455 - RIP",
+                    image: "product-8"
+                },
+                {
+                    id: 9,
+                    name: "Grey Wrist Watch",
+                    category: "Watches",
+                    price: 80,
+                    description: "The Lifestyle Co Men Charcoal Grey & Gunmetal-Toned Analogue Watch MFB-PN-LW6147-3",
+                    image: "product-9"
+                },
+                {
+                    id: 10,
+                    name: "Black Casual Shoes",
+                    category: "Shoes",
+                    price: 40,
+                    description: "HRX by Hrithik Roshan Walking Shoes For Men",
+                    image: "product-10"
+                },
+                {
+                    id: 11,
+                    name: "Grey Casual Sneaker",
+                    category: "Shoes",
+                    price: 40,
+                    description: "Skechers Men's, Bounder - Inshore Sneaker ",
+                    image: "product-11"
+                },
+                {
+                    id: 12,
+                    name: "Black Jogging Pants",
+                    category: "Trousers",
+                    price: 25,
+                    description: "NIKE Men Solid Black Track Pants",
+                    image: "product-12"
+                },
+
+            ]
+        };
+        // Products container 
+        let productsContainer = document.createElement("div");
+        productsContainer.classList.add("row");
+
+        // Event Listener 
+        document.getElementById("categoryFilter").addEventListener("change", filterProducts);
+        document.getElementById("priceRange").addEventListener("input", updatePriceRange);
+
+        //Function to update price range and filter products
+        function updatePriceRange() {
+            let priceRangeValue = document.getElementById("priceRange").value;
+            document.getElementById("priceRangeValue").innerText = `$${priceRangeValue}`;
+            filterProducts();
+        }
+
+        // Function to filter Products
+        function filterProducts() {
+            let selectedCategory = document.getElementById("categoryFilter").value;
+            let maxPrice = document.getElementById("priceRange").value;
+
+            // Clear the container
+            productsContainer.innerHTML = "";
+
+            // Filter products by category and price
+            for (let i of products.data) {
+                if ((selectedCategory === "All" || i.category === selectedCategory) && i.price <= maxPrice) {
+                    let productCard = document.createElement("div");
+                    productCard.classList.add("col-4");
+
+                    let img = document.createElement("img");
+                    img.setAttribute("src", "images/" + i.image + ".jpg");
+
+                    let name = document.createElement("h4");
+                    name.innerHTML = i.name;
+
+                    let rating = document.createElement("div");
+                    rating.classList.add("rating");
+                    rating.innerHTML = "<i class=\"fa fa-star\" aria-hidden=\"true\"></i><i class=\"fa fa-star\" aria-hidden=\"true\"></i><i class=\"fa fa-star\" aria-hidden=\"true\"></i><i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>";
+
+                    let price = document.createElement("p");
+                    price.innerText = i.price + ".00 $";
+
+                    productCard.appendChild(img);
+                    productCard.appendChild(name);
+                    productCard.appendChild(rating);
+                    productCard.appendChild(price);
+
+                    productsContainer.appendChild(productCard);
+                }
+            }
+        }
+
+        let filterRow = document.querySelector(".row.row-2");
+        // Function to insert products after the filter row
+        filterRow.insertAdjacentElement("afterend", productsContainer);
+        filterProducts();
+
+
+    </script>
+
+
+</body>
+
+</html>
