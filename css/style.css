@@ -111,7 +111,36 @@ p{
     min-width: 200px;
     margin-bottom: 50px;
     transition: transform 0.5s;/*when apply hover effect it will move image with 5sec delay*/
+    position: relative;
+    overflow: hidden;
 }
+.col-4:hover {
+    background-color: #ffd6d6;
+}
+/* Styling the add to cart button */
+.add-to-cart-btn {
+    display: none;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: var(--orange);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background 0.5s;
+}
+.add-to-cart-btn:hover{
+    background: #563434;
+}
+.col-4:hover .add-to-cart-btn {
+    display: block;
+}
+/* Styling the add to cart button */
+
 .col-4 img{
     width: 100%;/*each image occupies full column width*/
 }

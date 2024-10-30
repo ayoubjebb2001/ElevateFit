@@ -30,15 +30,21 @@
 
             <ul class="menu-bar-side">
                 <li><a href="index.html" style=" all: unset;">Home</a></li>
-                <li><a href="Products.html" style=" all: unset;">Shope</a></li>
+                <li><a href="Products.html" style=" all: unset;">Shop</a></li>
                 <li><a href="#" style=" all: unset;">about</a></li>
                 <li><a href="#" style=" all: unset;">contact us</a></li>
             </ul>
 
             <ul class="menu-bar">
 
-                <li>&#36;0.00</li>
-                <li><i class='fas fa-shopping-cart'></i></li>
+                <li>
+                        &#36;0.00
+                </li>
+                <li>
+                        <i class='fas fa-shopping-cart'>
+
+                        </i>
+                </li>
 
             </ul>
 
@@ -71,14 +77,14 @@
             <span id="priceRangeValue">$100</span>
         </div>
 
-    <div class="page-btn">
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>&#8594;</span>
+        <div class="page-btn">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>&#8594;</span>
 
-    </div>
+        </div>
     </div>
 
     <!-------footer------->
@@ -241,9 +247,11 @@
         let productsContainer = document.createElement("div");
         productsContainer.classList.add("row");
 
+
         // Event Listener 
         document.getElementById("categoryFilter").addEventListener("change", filterProducts);
         document.getElementById("priceRange").addEventListener("input", updatePriceRange);
+
 
         //Function to update price range and filter products
         function updatePriceRange() {
@@ -251,6 +259,10 @@
             document.getElementById("priceRangeValue").innerText = `$${priceRangeValue}`;
             filterProducts();
         }
+
+        // Total amount in cart 
+        let totalAmount = 0;
+        let cartAmountElement = document.querySelector(".menu-bar li");
 
         // Function to filter Products
         function filterProducts() {
@@ -263,26 +275,43 @@
             // Filter products by category and price
             for (let i of products.data) {
                 if ((selectedCategory === "All" || i.category === selectedCategory) && i.price <= maxPrice) {
+                    // Create product cart 
                     let productCard = document.createElement("div");
                     productCard.classList.add("col-4");
 
+                    //Create image for the product
                     let img = document.createElement("img");
                     img.setAttribute("src", "images/" + i.image + ".jpg");
 
+                    //Create product name
                     let name = document.createElement("h4");
                     name.innerHTML = i.name;
 
+                    //Create product rating
                     let rating = document.createElement("div");
                     rating.classList.add("rating");
                     rating.innerHTML = "<i class=\"fa fa-star\" aria-hidden=\"true\"></i><i class=\"fa fa-star\" aria-hidden=\"true\"></i><i class=\"fa fa-star\" aria-hidden=\"true\"></i><i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>";
 
+                    //Create product price 
                     let price = document.createElement("p");
                     price.innerText = i.price + ".00 $";
+
+                    // Create "Add to Cart" button
+                    let addToCartBtn = document.createElement("button");
+                    addToCartBtn.classList.add("add-to-cart-btn");
+                    addToCartBtn.innerText = "Add to Cart";
+
+                    // Add click event to button
+                    addToCartBtn.addEventListener("click", function () {
+                        totalAmount += i.price;
+                        cartAmountElement.innerText = `$${totalAmount}.00`; // Update the cart amount in nav
+                    });
 
                     productCard.appendChild(img);
                     productCard.appendChild(name);
                     productCard.appendChild(rating);
                     productCard.appendChild(price);
+                    productCard.appendChild(addToCartBtn);
 
                     productsContainer.appendChild(productCard);
                 }
