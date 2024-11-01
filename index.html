@@ -8,22 +8,22 @@
     <title>elevateFit | The #1 Ecommerce Website </title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/banner.css">
+    <!--poppins font from google fonts website then select popping select some types and then embed-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <!--poppins font from google fonts website then select popping select some types and then embed-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--link to connect to font awesome 4 to use different icons, just type font awesome 4 cdn and click on first link and copy the url and past it here with rel="stylesheet"-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!---- icon cdn link---->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!---- icon cdn link---->
-
+    <script src="js/main.js"></script>
+    <!-- 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> -->
     <!--- owl carsoul ---->
 </head>
 
@@ -45,43 +45,32 @@
 
             <ul class="menu-bar">
 
-                <li>&#36;0.00</li>
-                <li><i class='fas fa-shopping-cart'></i></li>
+                <li>
+                    <a href="cart.html" style="all:unset">
+                        &#36;0.00
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html" style="all:unset">
+                        <i class='fas fa-shopping-cart'></i>
+                    </a>
+
+                </li>
 
             </ul>
 
             <i class="fa fa-bars"></i>
         </nav>
 
-
-        <div class="content">
-
-            <h2 class="heading">
-                Raining Offers For Hot Summer!
-            </h2>
-
-            <h4>
-                25% Off On All Products
-            </h4>
-
-            <button class="shopNow">
-                shop now
-            </button>
-            <button class="findMore">
-                find more
-            </button>
-
-        </div>
-
     </header>
     <!--- end header --->
 
     <!--Featured categories-->
-  
+
     <div class="categories">
 
 
-       
+
         <div class="small container">
             <div class="row">
 
@@ -105,20 +94,18 @@
     <!--using same class small container to maintain same styling-->
 
     <div class="small container">
-      
+
         <h2 class="title">Featured Products</h2>
         <div class="row">
-         
 
-            
+
+
             <div class="col-4">
-                <a href="product-detail.html"><img src="images/product-1.jpg"></a>
-                <a href="product-detail.html">
-                    <h4>Red Printed T-shirt</h4>
-                </a>
+                <img src="images/product-1.jpg">
+
+                <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -131,8 +118,7 @@
                 <img src="images/product-2.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -145,8 +131,7 @@
                 <img src="images/product-3.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
@@ -159,8 +144,7 @@
                 <img src="images/product-4.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -171,7 +155,7 @@
             </div>
         </div>
 
-        
+
 
         <h2 class="title">Latest Products</h2>
         <div class="row">
@@ -180,8 +164,7 @@
                 <img src="images/product-5.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -194,8 +177,7 @@
                 <img src="images/product-6.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -208,8 +190,7 @@
                 <img src="images/product-7.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
@@ -222,8 +203,7 @@
                 <img src="images/product-8.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -238,8 +218,7 @@
                 <img src="images/product-9.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -252,8 +231,7 @@
                 <img src="images/product-10.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -266,8 +244,7 @@
                 <img src="images/product-11.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
@@ -280,8 +257,7 @@
                 <img src="images/product-12.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
-                    <i class="fa fa-star"
-                        aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -324,18 +300,17 @@
         <div class="small container">
             <div class="row">
 
-                
+
                 <div class="col-3">
 
-                    
+
                     <i class="fa fa-quote-left" aria-hidden="true"></i>
                     <p>
                         Lorem Ipsum is simply dummy text of the prinitng and typesetting industry. Lorem Ipsum has been
                         the industry;s standard dummy text ever
                     </p>
                     <div class="rating">
-                        <i class="fa fa-star"
-                            aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -348,15 +323,14 @@
 
                 <div class="col-3">
 
-                    
+
                     <i class="fa fa-quote-left" aria-hidden="true"></i>
                     <p>
                         Lorem Ipsum is simply dummy text of the prinitng and typesetting industry. Lorem Ipsum has been
                         the industry;s standard dummy text ever
                     </p>
                     <div class="rating">
-                        <i class="fa fa-star"
-                            aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -375,8 +349,7 @@
                         the industry;s standard dummy text ever
                     </p>
                     <div class="rating">
-                        <i class="fa fa-star"
-                            aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -428,12 +401,12 @@
         <div class="container">
             <div class="row">
 
-           
+
                 <div class="footer-col-1">
                     <h3>Download Our App</h3>
                     <p>Download App for Android and Ios mobile phone.</p>
 
-                  
+
                     <div class="app-logo">
                         <img src="images/play-store.png">
                         <img src="images/app-store.png">
@@ -469,7 +442,7 @@
 
                 </div>
             </div>
-            
+
             <hr>
             <a href="" class="copyright">Copyright 2024 - Made with ❤️ LorenzCipher</a>
         </div>

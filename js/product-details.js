@@ -157,7 +157,7 @@ document.getElementById("addToCartBtn").addEventListener("click", function (even
             cart.push(selectedProduct);
         } else {
             // If product exists, update quantity
-            cart[productIndex].quantity += selectedQuantity;
+            cart[productIndex].quantity = selectedQuantity;
         }
 
         // Save updated cart to localStorage
@@ -170,9 +170,24 @@ document.getElementById("addToCartBtn").addEventListener("click", function (even
     }
 });
 
+
+// Add product to cart in localStorage
+function addToCart(product) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingProduct = cart.find((item) => item.id === product.id);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartAmount();
+}
 // event Listener to prevent user to enter quanity under 1
 const input = document.querySelector(".col-2 input[type='number']");
-input.addEventListener("keypress",(event)=>{
+input.addEventListener("keypress", (event) => {
     event.preventDefault();
 })
 
@@ -182,7 +197,23 @@ function updateCartAmount() {
     let totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     document.querySelector(".menu-bar li:first-child a").innerText = `$${totalAmount.toFixed(2)}`;
 }
+// Clear cart function
+function clearCart() {
+    localStorage.removeItem("cart");
+    updateCartAmount();
+}
 
+// Add "Clear Cart" button to navigation
+function addClearCartButton() {
+    const clearCartBtn = document.createElement("button");
+    clearCartBtn.innerText = "Clear Cart";
+    clearCartBtn.classList.add("clear-cart-btn");
+    clearCartBtn.addEventListener("click", clearCart);
+
+    const menuBar = document.querySelector(".menu-bar");
+    const cartIcon = document.querySelector(".menu-bar li:last-child");
+    menuBar.insertBefore(clearCartBtn, cartIcon);
+}
 
 //  Display related products 
 // Function to display 4 random related products
@@ -252,6 +283,8 @@ function viewProductDetails(product) {
 
 // Retrieve the selected product and display related products on page load
 document.addEventListener("DOMContentLoaded", function () {
+    addClearCartButton();
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
     if (selectedProduct) {
         // Display the selected product details (your existing logic)
@@ -265,8 +298,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".col-2 h1").innerText = selectedProduct.name;
         document.querySelector(".col-2 h4").innerText = `$${selectedProduct.price}.00`;
         document.querySelector(".col-2 p").innerText = selectedProduct.description;
-        document.getElementById("description").innerText = selectedProduct.name + " " + selectedProduct.description
-
+        document.getElementById("description").innerText = selectedProduct.name + " " + selectedProduct.description;
+        // Find if product is already in the cart
+        const productIndex = cart.findIndex(item => item.id === selectedProduct.id);
+        if (productIndex !== -1){
+            document.querySelector(".col-2 input[type='number']").setAttribute("value", `${cart[productIndex].quantity}`);
+        }
         // Display related products
         displayRelatedProducts(selectedProduct);
         // Update cart amount on page load

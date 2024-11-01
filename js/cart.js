@@ -4,6 +4,23 @@ function updateCartAmount() {
     let totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     document.querySelector(".menu-bar li:first-child a").innerText = `$${totalAmount.toFixed(2)}`;
 }
+// Clear cart function
+function clearCart() {
+    localStorage.removeItem("cart");
+    updateCartAmount();
+}
+
+// Add "Clear Cart" button to navigation
+function addClearCartButton() {
+    const clearCartBtn = document.createElement("button");
+    clearCartBtn.innerText = "Clear Cart";
+    clearCartBtn.classList.add("clear-cart-btn");
+    clearCartBtn.addEventListener("click", clearCart);
+
+    const menuBar = document.querySelector(".menu-bar");
+    const cartIcon = document.querySelector(".menu-bar li:last-child");
+    menuBar.insertBefore(clearCartBtn, cartIcon);
+}
 
 // Function to display cart items 
 function displayCartItems() {
@@ -43,6 +60,7 @@ function displayCartItems() {
 
         // Append row to the table
         cartTable.appendChild(row);
+
     });
 
 }
@@ -71,6 +89,7 @@ function displayTotal() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    addClearCartButton();
     updateCartAmount();
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     displayCartItems();
