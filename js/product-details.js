@@ -1,188 +1,190 @@
 // JS for Single product detail
 
-        var ProductImg = document.getElementById("product-img");//larger image
-        var SmallImg = document.getElementsByClassName("small-img");//it returns list of 4 images having index 0,1,2,3 as we have 4 images with class name "small0-img" 
+var ProductImg = document.getElementById("product-img");//larger image
+var SmallImg = document.getElementsByClassName("small-img");//it returns list of 4 images having index 0,1,2,3 as we have 4 images with class name "small0-img" 
 
-        SmallImg[0].onclick = function()//when user click on first image or images at 0 index, it will display as ProdcutImg.src replace with clicked or SmallImg[0], so we get smallimg[0] in bigger form, similarly when click on smallimg[1], it will display in bigger picture and so on 
+SmallImg[0].onclick = function ()//when user click on first image or images at 0 index, it will display as ProdcutImg.src replace with clicked or SmallImg[0], so we get smallimg[0] in bigger form, similarly when click on smallimg[1], it will display in bigger picture and so on 
+{
+    ProductImg.src = SmallImg[0].src;
+}
+
+SmallImg[1].onclick = function () {
+    ProductImg.src = SmallImg[1].src;
+}
+
+SmallImg[2].onclick = function () {
+    ProductImg.src = SmallImg[2].src;
+}
+
+SmallImg[3].onclick = function () {
+    ProductImg.src = SmallImg[3].src;
+}
+
+// Products 
+let products = {
+    data: [
         {
-            ProductImg.src = SmallImg[0].src;   
-        }
-
-        SmallImg[1].onclick = function()
+            id: 1,
+            name: "Red Printed T-Shirt",
+            category: "Shirts",
+            price: 20,
+            description: "Men Maroon Printed Round Neck Optical T-shirt",
+            image: "product-1",
+            extension: "jpg"
+        },
         {
-            ProductImg.src = SmallImg[1].src;   
-        }
-
-        SmallImg[2].onclick = function()
+            id: 2,
+            name: "Black Sports Shoes",
+            category: "Shoes",
+            price: 40,
+            description: "HRX by Hrithik Roshan Running Shoes For Men",
+            image: "product-2",
+            extension: "webp"
+        },
         {
-            ProductImg.src = SmallImg[2].src;   
-        }
-
-        SmallImg[3].onclick = function()
+            id: 3,
+            name: "Grey Trouser",
+            category: "Trousers",
+            price: 25,
+            description: "United Colors of Benetton Men's Sweatpants ",
+            image: "product-3",
+            extension: "jpg"
+        },
         {
-            ProductImg.src = SmallImg[3].src;   
+            id: 4,
+            name: "Navy Blue Polo Shirt",
+            category: "Shirts",
+            price: 25,
+            description: "Men Solid Polo Neck Cotton Blend Blue T-Shirt",
+            image: "product-4",
+            extension: "webp"
+        },
+        {
+            id: 5,
+            name: "Grey Sports Shoes",
+            category: "Shoes",
+            price: 40,
+            description: "HRX by Hrithik Roshan Sneakers For Men",
+            image: "product-5",
+            extension: "webp"
+        },
+        {
+            id: 6,
+            name: "Black Sports T-shirt",
+            category: "Shirts",
+            price: 40,
+            description: "PUMA Above The Bar Camo Tee Men Printed Round Neck Cotton Blend T-Shirt",
+            image: "product-6",
+            extension: "webp"
+        },
+        {
+            id: 7,
+            name: "Sports Socks",
+            category: "Socks",
+            price: 10,
+            description: "HRX Men Ankle Length Socks",
+            image: "product-7",
+            extension: "webp"
+        },
+        {
+            id: 8,
+            name: "Black Wrist Watch",
+            category: "Watches",
+            price: 80,
+            description: "Fossil The Minimalist FS5455 - RIP",
+            image: "product-8",
+            extension: "jpg"
+        },
+        {
+            id: 9,
+            name: "Grey Wrist Watch",
+            category: "Watches",
+            price: 80,
+            description: "The Lifestyle Co Men Charcoal Grey & Gunmetal-Toned Analogue Watch MFB-PN-LW6147-3",
+            image: "product-9",
+            extension: "webp"
+        },
+        {
+            id: 10,
+            name: "Black Casual Shoes",
+            category: "Shoes",
+            price: 40,
+            description: "HRX by Hrithik Roshan Walking Shoes For Men",
+            image: "product-10",
+            extension: "webp"
+        },
+        {
+            id: 11,
+            name: "Grey Casual Sneaker",
+            category: "Shoes",
+            price: 40,
+            description: "Skechers Men's, Bounder - Inshore Sneaker ",
+            image: "product-11",
+            extension: "jpg"
+        },
+        {
+            id: 12,
+            name: "Black Jogging Pants",
+            category: "Trousers",
+            price: 25,
+            description: "NIKE Men Solid Black Track Pants",
+            image: "product-12",
+            extension: "webp"
+        },
+
+    ]
+};
+
+
+// event listener to the "Add to Cart" button When clicked, this will add the product to the cart in localStorage.
+document.getElementById("addToCartBtn").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default anchor behavior
+
+    const selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
+    const quantityInput = document.querySelector(".col-2 input[type='number']");
+    const selectedQuantity = parseInt(quantityInput.value); // Get quantity from input
+
+    if (selectedProduct && selectedQuantity > 0) {
+        // Retrieve cart from localStorage or initialize as empty array
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Find if product is already in the cart
+        const productIndex = cart.findIndex(item => item.id === selectedProduct.id);
+
+        if (productIndex === -1) {
+            // Add new product with specified quantity
+            selectedProduct.quantity = selectedQuantity;
+            cart.push(selectedProduct);
+        } else {
+            // If product exists, update quantity
+            cart[productIndex].quantity += selectedQuantity;
         }
 
-        // Products 
-        let products = {
-            data: [
-                {
-                    id: 1,
-                    name: "Red Printed T-Shirt",
-                    category: "Shirts",
-                    price: 20,
-                    description: "Men Maroon Printed Round Neck Optical T-shirt",
-                    image: "product-1",
-                    extension : "jpg"
-                },
-        
-                {
-                    id: 2,
-                    name: "Black Sports Shoes",
-                    category: "Shoes",
-                    price: 40,
-                    description: "HRX by Hrithik Roshan Running Shoes For Men",
-                    image: "product-2",
-                    extension : "webp"
-                },
-                {
-                    id: 3,
-                    name: "Grey Trouser",
-                    category: "Trousers",
-                    price: 25,
-                    description: "United Colors of Benetton Men's Sweatpants ",
-                    image: "product-3",
-                    extension : "jpg"
-                },
-                {
-                    id: 4,
-                    name: "Navy Blue Polo Shirt",
-                    category: "Shirts",
-                    price: 25,
-                    description: "Men Solid Polo Neck Cotton Blend Blue T-Shirt",
-                    image: "product-4",
-                    extension : "webp"
-                },
-                {
-                    id: 5,
-                    name: "Grey Sports Shoes",
-                    category: "Shoes",
-                    price: 40,
-                    description: "HRX by Hrithik Roshan Sneakers For Men",
-                    image: "product-5",
-                    extension : "webp"
-                },
-                {
-                    id: 6,
-                    name: "Black Sports T-shirt",
-                    category: "Shirts",
-                    price: 40,
-                    description: "PUMA Above The Bar Camo Tee Men Printed Round Neck Cotton Blend T-Shirt",
-                    image: "product-6",
-                    extension : "webp"
-                },
-                {
-                    id: 7,
-                    name: "Sports Socks",
-                    category: "Socks",
-                    price: 10,
-                    description: "HRX Men Ankle Length Socks",
-                    image: "product-7",
-                    extension : "webp"
-                },
-                {
-                    id: 8,
-                    name: "Black Wrist Watch",
-                    category: "Watches",
-                    price: 80,
-                    description: "Fossil The Minimalist FS5455 - RIP",
-                    image: "product-8",
-                    extension : "jpg"
-                },
-                {
-                    id: 9,
-                    name: "Grey Wrist Watch",
-                    category: "Watches",
-                    price: 80,
-                    description: "The Lifestyle Co Men Charcoal Grey & Gunmetal-Toned Analogue Watch MFB-PN-LW6147-3",
-                    image: "product-9",
-                    extension : "webp"
-                },
-                {
-                    id: 10,
-                    name: "Black Casual Shoes",
-                    category: "Shoes",
-                    price: 40,
-                    description: "HRX by Hrithik Roshan Walking Shoes For Men",
-                    image: "product-10",
-                    extension : "webp"
-                },
-                {
-                    id: 11,
-                    name: "Grey Casual Sneaker",
-                    category: "Shoes",
-                    price: 40,
-                    description: "Skechers Men's, Bounder - Inshore Sneaker ",
-                    image: "product-11",
-                    extension : "jpg"
-                },
-                {
-                    id: 12,
-                    name: "Black Jogging Pants",
-                    category: "Trousers",
-                    price: 25,
-                    description: "NIKE Men Solid Black Track Pants",
-                    image: "product-12",
-                    extension : "webp"
-                },
-        
-            ]
-        };
+        // Save updated cart to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Update cart amount in the nav
+        updateCartAmount();
+    } else {
+        console.error("Invalid product or quantity.");
+    }
+});
+
+// event Listener to prevent user to enter quanity under 1
+const input = document.querySelector(".col-2 input[type='number']");
+input.addEventListener("keypress",(event)=>{
+    event.preventDefault();
+})
+
+// Function to update cart amount
+function updateCartAmount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    document.querySelector(".menu-bar li:first-child a").innerText = `$${totalAmount.toFixed(2)}`;
+}
 
 
-        // event listener to the "Add to Cart" button When clicked, this will add the product to the cart in localStorage.
-        document.getElementById("addToCartBtn").addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent default anchor behavior
-    
-            const selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
-            const quantityInput = document.querySelector(".col-2 input[type='number']");
-            const selectedQuantity = parseInt(quantityInput.value); // Get quantity from input
-            
-            if (selectedProduct && selectedQuantity > 0) {
-                // Retrieve cart from localStorage or initialize as empty array
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        
-                // Find if product is already in the cart
-                const productIndex = cart.findIndex(item => item.id === selectedProduct.id);
-        
-                if (productIndex === -1) {
-                    // Add new product with specified quantity
-                    selectedProduct.quantity = selectedQuantity;
-                    cart.push(selectedProduct);
-                } else {
-                    // If product exists, update quantity
-                    cart[productIndex].quantity += selectedQuantity;
-                }
-        
-                // Save updated cart to localStorage
-                localStorage.setItem("cart", JSON.stringify(cart));
-                
-                // Update cart amount in the nav
-                updateCartAmount();
-            } else {
-                console.error("Invalid product or quantity.");
-            }
-        });
-        
-        // Function to update cart amount
-        function updateCartAmount() {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            let totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-            document.querySelector(".menu-bar li:first-child a").innerText = `$${totalAmount.toFixed(2)}`;
-        }
-
-
-        //  Display related products 
+//  Display related products 
 // Function to display 4 random related products
 function displayRelatedProducts(selectedProduct) {
     // Filter products to exclude the currently displayed product
@@ -249,21 +251,21 @@ function viewProductDetails(product) {
 }
 
 // Retrieve the selected product and display related products on page load
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
     if (selectedProduct) {
         // Display the selected product details (your existing logic)
         document.getElementById("product-img").src = `images/${selectedProduct.image}.jpg`;
-        
+
         // Set small images (thumbnails) with loop
         const smallImages = document.getElementsByClassName("small-img");
         for (let i = 0; i < smallImages.length; i++) {
-                smallImages[i].src = `images/${selectedProduct.image}-${i+1}.${selectedProduct.extension}`;
+            smallImages[i].src = `images/${selectedProduct.image}-${i + 1}.${selectedProduct.extension}`;
         }
         document.querySelector(".col-2 h1").innerText = selectedProduct.name;
         document.querySelector(".col-2 h4").innerText = `$${selectedProduct.price}.00`;
         document.querySelector(".col-2 p").innerText = selectedProduct.description;
-        document.getElementById("description").innerText = selectedProduct.name+" "+selectedProduct.description
+        document.getElementById("description").innerText = selectedProduct.name + " " + selectedProduct.description
 
         // Display related products
         displayRelatedProducts(selectedProduct);

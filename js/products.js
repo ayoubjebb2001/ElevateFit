@@ -1,3 +1,4 @@
+// Products 
 let products = {
     data: [
         {
@@ -6,16 +7,17 @@ let products = {
             category: "Shirts",
             price: 20,
             description: "Men Maroon Printed Round Neck Optical T-shirt",
-            image: "product-1"
+            image: "product-1",
+            extension: "jpg"
         },
-
         {
             id: 2,
             name: "Black Sports Shoes",
             category: "Shoes",
             price: 40,
             description: "HRX by Hrithik Roshan Running Shoes For Men",
-            image: "product-2"
+            image: "product-2",
+            extension: "webp"
         },
         {
             id: 3,
@@ -23,7 +25,8 @@ let products = {
             category: "Trousers",
             price: 25,
             description: "United Colors of Benetton Men's Sweatpants ",
-            image: "product-3"
+            image: "product-3",
+            extension: "jpg"
         },
         {
             id: 4,
@@ -31,7 +34,8 @@ let products = {
             category: "Shirts",
             price: 25,
             description: "Men Solid Polo Neck Cotton Blend Blue T-Shirt",
-            image: "product-4"
+            image: "product-4",
+            extension: "webp"
         },
         {
             id: 5,
@@ -39,7 +43,8 @@ let products = {
             category: "Shoes",
             price: 40,
             description: "HRX by Hrithik Roshan Sneakers For Men",
-            image: "product-5"
+            image: "product-5",
+            extension: "webp"
         },
         {
             id: 6,
@@ -47,7 +52,8 @@ let products = {
             category: "Shirts",
             price: 40,
             description: "PUMA Above The Bar Camo Tee Men Printed Round Neck Cotton Blend T-Shirt",
-            image: "product-6"
+            image: "product-6",
+            extension: "webp"
         },
         {
             id: 7,
@@ -55,7 +61,8 @@ let products = {
             category: "Socks",
             price: 10,
             description: "HRX Men Ankle Length Socks",
-            image: "product-7"
+            image: "product-7",
+            extension: "webp"
         },
         {
             id: 8,
@@ -63,7 +70,8 @@ let products = {
             category: "Watches",
             price: 80,
             description: "Fossil The Minimalist FS5455 - RIP",
-            image: "product-8"
+            image: "product-8",
+            extension: "jpg"
         },
         {
             id: 9,
@@ -71,7 +79,8 @@ let products = {
             category: "Watches",
             price: 80,
             description: "The Lifestyle Co Men Charcoal Grey & Gunmetal-Toned Analogue Watch MFB-PN-LW6147-3",
-            image: "product-9"
+            image: "product-9",
+            extension: "webp"
         },
         {
             id: 10,
@@ -79,7 +88,8 @@ let products = {
             category: "Shoes",
             price: 40,
             description: "HRX by Hrithik Roshan Walking Shoes For Men",
-            image: "product-10"
+            image: "product-10",
+            extension: "webp"
         },
         {
             id: 11,
@@ -87,7 +97,8 @@ let products = {
             category: "Shoes",
             price: 40,
             description: "Skechers Men's, Bounder - Inshore Sneaker ",
-            image: "product-11"
+            image: "product-11",
+            extension: "jpg"
         },
         {
             id: 12,
@@ -95,7 +106,8 @@ let products = {
             category: "Trousers",
             price: 25,
             description: "NIKE Men Solid Black Track Pants",
-            image: "product-12"
+            image: "product-12",
+            extension: "webp"
         },
 
     ]
