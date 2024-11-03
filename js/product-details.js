@@ -2,7 +2,6 @@
 
 var ProductImg = document.getElementById("product-img");//larger image
 var SmallImg = document.getElementsByClassName("small-img");//it returns list of 4 images having index 0,1,2,3 as we have 4 images with class name "small0-img" 
-
 SmallImg[0].onclick = function ()//when user click on first image or images at 0 index, it will display as ProdcutImg.src replace with clicked or SmallImg[0], so we get smallimg[0] in bigger form, similarly when click on smallimg[1], it will display in bigger picture and so on 
 {
     ProductImg.src = SmallImg[0].src;
@@ -301,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("description").innerText = selectedProduct.name + " " + selectedProduct.description;
         // Find if product is already in the cart
         const productIndex = cart.findIndex(item => item.id === selectedProduct.id);
-        if (productIndex !== -1){
+        if (productIndex !== -1) {
             document.querySelector(".col-2 input[type='number']").setAttribute("value", `${cart[productIndex].quantity}`);
         }
         // Display related products

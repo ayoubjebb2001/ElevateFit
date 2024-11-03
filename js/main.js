@@ -118,9 +118,6 @@ function createProductCard(product) {
     const productCard = document.createElement("div");
     productCard.classList.add("col-4");
 
-    // Click to view product details
-    productCard.addEventListener("click", () => viewProductDetails(product));
-
     // Product elements
     const img = document.createElement("img");
     img.setAttribute("src", "images/" + product.image + ".jpg");
@@ -139,6 +136,9 @@ function createProductCard(product) {
         addToCart(product);
     });
     productCard.append(img, name, rating, price, addToCartBtn);
+
+    // Click to view product details
+    productCard.addEventListener("click", () => viewProductDetails(product));
     return productCard;
 }
 // Function to add rating

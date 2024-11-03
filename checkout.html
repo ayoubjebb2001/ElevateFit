@@ -70,14 +70,14 @@
             <h2>Product Order Form</h2>
         </div>
         <div class="d-flex">
-            <form action="" method="">
+            <form action="" method="" id="orderForm">
                 <label>
                     <span class="fname">First Name <span class="required">*</span></span>
-                    <input type="text" name="fname">
+                    <input type="text" name="fname" required>
                 </label>
                 <label>
                     <span class="lname">Last Name <span class="required">*</span></span>
-                    <input type="text" name="lname">
+                    <input type="text" name="lname" required>
                 </label>
                 <label>
                     <span>Company Name (Optional)</span>
@@ -85,7 +85,7 @@
                 </label>
                 <label>
                     <span>Country <span class="required">*</span></span>
-                    <select name="selection">
+                    <select name="selection" required>
                         <option value="select">Select a country...</option>
                         <option value="AFG">Afghanistan</option>
                         <option value="ALA">Åland Islands</option>
@@ -348,37 +348,37 @@
                 </label>
                 <label>
                     <span>Town / City <span class="required">*</span></span>
-                    <input type="text" name="city">
+                    <input type="text" name="city" required>
                 </label>
                 <label>
                     <span>State / County <span class="required">*</span></span>
-                    <input type="text" name="city">
+                    <input type="text" name="country" required>
                 </label>
                 <label>
                     <span>Postcode / ZIP <span class="required">*</span></span>
-                    <input type="text" name="city">
+                    <input type="text" name="postcode" required>
                 </label>
                 <label>
                     <span>Phone <span class="required">*</span></span>
-                    <input type="tel" name="city">
+                    <input type="tel" name="phone" required>
                 </label>
                 <label>
                     <span>Email Address <span class="required">*</span></span>
-                    <input type="email" name="city">
+                    <input type="email" name="email" required>
                 </label>
             </form>
             <div class="Yorder">
-                <table>
+                <table id="orderSummary">
                     <tr>
                         <th colspan="2">Your order</th>
                     </tr>
                     <tr>
-                        <td>Product Name x 2(Qty)</td>
-                        <td>$88.00</td>
+                        <td id="productsCount">Products: 0(Qty)</td>
+                        <td id="orderTotal">$0.00</td>
                     </tr>
                     <tr>
                         <td>Subtotal</td>
-                        <td>$88.00</td>
+                        <td id="subtotal">$0.00</td>
                     </tr>
                     <tr>
                         <td>Shipping</td>
@@ -389,21 +389,19 @@
                 <div>
                     <input type="radio" name="dbt" value="dbt" checked> Direct Bank Transfer
                 </div>
-                <p>
-                    Make your payment directly into our bank account. Please use your Order ID as the payment reference.
-                    Your order will not be shipped until the funds have cleared in our account.
+                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference.
                 </p>
                 <div>
                     <input type="radio" name="dbt" value="cd"> Cash on Delivery
                 </div>
                 <div>
-                    <input type="radio" name="dbt" value="cd"> Paypal <span>
-                        <img src="https://www.logolynx.com/images/logolynx/c3/c36093ca9fb6c250f74d319550acac4d.jpeg"
-                            alt="" width="50">
-                    </span>
+                    <input type="radio" name="dbt" value="paypal"> Paypal
+                    <span><img src="https://www.logolynx.com/images/logolynx/c3/c36093ca9fb6c250f74d319550acac4d.jpeg"
+                            width="50"></span>
                 </div>
-                <button type="button">Place Order</button>
-            </div><!-- Yorder -->
+                <button type="button" onclick="validateOrderForm()">Place Order</button>
+            </div>
+            <!-- Yorder -->
         </div>
     </div>
     <!-------footer------->
@@ -457,6 +455,7 @@
             <a href="" class="copyright">Copyright 2024 - Made with ❤️ LorenzCipher</a>
         </div>
     </div>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
